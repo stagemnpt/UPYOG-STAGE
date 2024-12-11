@@ -120,7 +120,7 @@ const NewApplication = () => {
       };
     }
 
-    history.replace("/digit-ui/employee/pt/response", { Property: formData }); //current wala
+    history.replace("/upyog-ui/employee/pt/response", { Property: formData }); //current wala
 
   };
   if (isLoading) {

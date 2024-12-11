@@ -267,7 +267,7 @@ const SearchAssessment = ({ config: propsConfig, onSelect }) => {
       });
     } else {
       history.push(
-        `/digit-ui/citizen/pt/property/property-assessment/search-assessment-results?${Object.keys(qs)
+        `/upyog-ui/citizen/pt/property/property-assessment/search-assessment-results?${Object.keys(qs)
           .map((key) => `${key}=${qs[key]}`)
           .join("&")}`
       );

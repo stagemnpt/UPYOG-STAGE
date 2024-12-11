@@ -56,7 +56,7 @@ const selectedAction =    {
   customFunctionToExecute: (data) => {
     //const history = useHistory();
     delete data.customFunctionToExecute;
-    history.replace({ pathname: `/digit-ui/citizen/pt/assessment-details/${property.propertyId}`, state: { ...data } });
+    history.replace({ pathname: `/upyog-ui/citizen/pt/assessment-details/${property.propertyId}`, state: { ...data } });
   },
   tenantId: Digit.ULBService.getStateId(),
 }
@@ -125,10 +125,10 @@ const handleClick=()=>{
   setshowModal(true)
 }
 const onBifurcate = () =>{
-  history.push({pathname: "/digit-ui/citizen/pt/property/new-application", state: {propertyDetails: property, action: 'BIFURCATION'}})
+  history.push({pathname: "/upyog-ui/citizen/pt/property/new-application", state: {propertyDetails: property, action: 'BIFURCATION'}})
 }
 const onAppeal =()=>{
-  history.push(`/digit-ui/citizen/pt/property/appeal/${property?.propertyId}`);
+  history.push(`/upyog-ui/citizen/pt/property/appeal/${property?.propertyId}`);
 
 }
   sessionStorage.setItem("pt-property", JSON.stringify(property));
@@ -231,19 +231,19 @@ const onAppeal =()=>{
       //       setIsEnableLoader(false);
       //       if (isOBPS?.bpa) {
       //         data.selectedAction = selectedAction;
-      //         history.replace(`/digit-ui/employee/obps/response`, { data: data });
+      //         history.replace(`/upyog-ui/employee/obps/response`, { data: data });
       //       }
       //       if (isOBPS?.isStakeholder) {
       //         data.selectedAction = selectedAction;
-      //         history.push(`/digit-ui/employee/obps/stakeholder-response`, { data: data });
+      //         history.push(`/upyog-ui/employee/obps/stakeholder-response`, { data: data });
       //       }
       //       if (isOBPS?.isNoc) {
-      //         history.push(`/digit-ui/employee/noc/response`, { data: data });
+      //         history.push(`/upyog-ui/employee/noc/response`, { data: data });
       //       }
       //       if (data?.Amendments?.length > 0 ){
       //         //RAIN-6981 instead just show a toast here with appropriate message
       //       //show toast here and return 
-      //         //history.push("/digit-ui/employee/ws/response-bill-amend", { status: true, state: data?.Amendments?.[0] })
+      //         //history.push("/upyog-ui/employee/ws/response-bill-amend", { status: true, state: data?.Amendments?.[0] })
               
       //         if(variables?.AmendmentUpdate?.workflow?.action.includes("SEND_BACK")){
       //           setShowToast({ key: "success", label: t("ES_MODIFYSWCONNECTION_SEND_BACK_UPDATE_SUCCESS")})
@@ -288,7 +288,7 @@ const onAppeal =()=>{
   sessionStorage.setItem("localityCode", data.Properties[0].address.locality.code);
   sessionStorage.setItem("landmark", data.Properties[0].address.landmark); 
   sessionStorage.setItem("propertyid",data.Properties[0].propertyId)  ;
-  history.push(`/digit-ui/citizen/pgr/create-complaint/complaint-type?propertyId=${property.propertyId}`);
+  history.push(`/upyog-ui/citizen/pgr/create-complaint/complaint-type?propertyId=${property.propertyId}`);
   }
   return (
     <React.Fragment>
@@ -306,7 +306,7 @@ const onAppeal =()=>{
 
             <Row className="border-none" label={t("CS_COMMON_TOTAL_AMOUNT_DUE")} text={getBillAmount(fetchBillData)=='CS_NA' ? 'NA' : `₹${t(getBillAmount(fetchBillData))}`} />
             {/* {getBillAmount(fetchBillData)!=='CS_NA' && <LinkLabel
-            onClick={() => history.push({ pathname: `/digit-ui/citizen/pt/payment-details/${property?.propertyId}`})}
+            onClick={() => history.push({ pathname: `/upyog-ui/citizen/pt/payment-details/${property?.propertyId}`})}
             style={isMobile ? { marginTop: "15px", marginLeft: "0px" } : { marginTop: "15px" }}
           >
             {t("PT_VIEW_PAYMENT")}
@@ -518,7 +518,7 @@ const onAppeal =()=>{
                       text={`${owner?.name || t("CS_NA")}`}
                       actionButtonStyle={{marginRight:"-10px"}}
                       actionButton={
-                        <ActionButton style={{marginRight:"-10px"}} jumpTo={`/digit-ui/citizen/pt/property/owner-history/${property.tenantId}/${property.propertyId}`} />
+                        <ActionButton style={{marginRight:"-10px"}} jumpTo={`/upyog-ui/citizen/pt/property/owner-history/${property.tenantId}/${property.propertyId}`} />
                       }
                     />
                     <Row className="border-none"  label={t("PT_COMMON_GENDER_LABEL")} text={`${owner?.gender ? owner?.gender.toLowerCase() : t("CS_NA")}`} />
@@ -570,7 +570,7 @@ const onAppeal =()=>{
             )} */}
             {property?.status === "ACTIVE" && !enableAudit && (getBillAmount(fetchBillData)==0 || getBillAmount(fetchBillData)=="CS_NA") && (fetchAssessmentData == null || fetchAssessmentData?.[0]?.status != "INWORKFLOW") && (
               <div style={{ marginTop: "1em", bottom: "0px", width: "100%", marginBottom: "1.2em" }}>
-                <Link to={{ pathname: `/digit-ui/citizen/pt/property/edit-application/action=UPDATE/${property.propertyId}` }}>
+                <Link to={{ pathname: `/upyog-ui/citizen/pt/property/edit-application/action=UPDATE/${property.propertyId}` }}>
                   <SubmitBar label={t("PT_UPDATE_PROPERTY_BUTTON")} />
                 </Link>
               </div>

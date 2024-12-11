@@ -95,14 +95,14 @@ export const CitizenSideBar = ({ isOpen, isMobile = false, toggleSidebar, onLogo
   const { isLoading, data } = Digit.Hooks.useAccessControl();
   const tenantId = Digit.ULBService.getCitizenCurrentTenant();
   const showProfilePage = () => {
-    const redirectUrl = isEmployee ? "/digit-ui/employee/user/profile" : "/digit-ui/citizen/user/profile";
+    const redirectUrl = isEmployee ? "/upyog-ui/employee/user/profile" : "/upyog-ui/citizen/user/profile";
     history.push(redirectUrl);
     closeSidebar();
   };
   const redirectToLoginPage = () => {
     // localStorage.clear();
     // sessionStorage.clear();
-    history.push("/digit-ui/citizen/login");
+    history.push("/upyog-ui/citizen/login");
     closeSidebar();
   };
   if (islinkDataLoading || isLoading || !isFetched) {

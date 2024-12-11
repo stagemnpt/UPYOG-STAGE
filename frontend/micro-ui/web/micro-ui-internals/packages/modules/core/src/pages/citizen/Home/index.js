@@ -44,9 +44,11 @@ const Home = () => {
 
   // if (!tenantId) {
   //   Digit.SessionStorage.get("locale") === null
-  //     ? history.push(`/digit-ui/citizen/select-language`)
-  //     : history.push(`/digit-ui/citizen/select-location`);
+  //     ? history.push(`/upyog-ui/citizen/select-language`)
+  //     : history.push(`/upyog-ui/citizen/select-location`);
   // }
+
+  console.log("uiHomePage===",uiHomePage)
 
   const appBannerWebObj = uiHomePage?.appBannerDesktop;
   const appBannerMobObj = uiHomePage?.appBannerMobile;
@@ -64,7 +66,7 @@ const Home = () => {
     header: t(citizenServicesObj?.headerLabel),
     sideOption: {
       name: t(citizenServicesObj?.sideOption?.name),
-      onClick: () => history.push(citizenServicesObj?.sideOption?.navigationUrl),
+      onClick: () => history.push(citizenServicesObj?.sideOption?.navigationUrl.replace('/digit-ui/', '/upyog-ui/')),
     },
     options: [
       // {
@@ -75,7 +77,7 @@ const Home = () => {
       {
         name: t(citizenServicesObj?.props?.[1]?.label),
         Icon: <PTIcon className="fill-path-primary-main" />,
-        onClick: () => history.push(citizenServicesObj?.props?.[1]?.navigationUrl),
+        onClick: () => history.push(citizenServicesObj?.props?.[1]?.navigationUrl.replace('/digit-ui/', '/upyog-ui/')),
       },
       // {
       //   name: t(citizenServicesObj?.props?.[2]?.label),
@@ -85,7 +87,7 @@ const Home = () => {
       // {
       //     name: t("ACTION_TEST_WATER_AND_SEWERAGE"),
       //     Icon: <DropIcon/>,
-      //     onClick: () => history.push("/digit-ui/citizen")
+      //     onClick: () => history.push("/upyog-ui/citizen")
       // },
       // {
       //   name: t(citizenServicesObj?.props?.[3]?.label),
@@ -146,7 +148,7 @@ const Home = () => {
             <StandaloneSearchBar placeholder={t("CS_COMMON_SEARCH_PLACEHOLDER")} />
           </div> */}
           <div className="ServicesSection">
-            <div role="button" tabindex="0" class="pt-card-main" onClick={()=> history.push(citizenServicesObj?.props?.[1]?.navigationUrl)}>
+            <div role="button" tabindex="0" class="pt-card-main" onClick={()=> history.push(citizenServicesObj?.props?.[1]?.navigationUrl.replace('/digit-ui/', '/upyog-ui/'))}>
               <img src="https://cdn.ksmart.lsgkerala.gov.in/common/webpage/services/property_tax.webp" loading="lazy" alt="img" class="pt-card-img1" />
               <div class="pt-card-mn2">
                 <div class="">

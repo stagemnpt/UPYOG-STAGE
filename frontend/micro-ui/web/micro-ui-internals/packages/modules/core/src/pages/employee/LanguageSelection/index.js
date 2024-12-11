@@ -19,7 +19,7 @@ const LanguageSelection = () => {
   const pdfUrl = "https://pg-egov-assets.s3.ap-south-1.amazonaws.com/Upyog+Code+and+Copyright+License_v1.pdf";
 
   const handleSubmit = (event) => {
-    history.push("/digit-ui/employee/user/login");
+    history.push("/upyog-ui/employee/user/login");
   };
 
   if (isLoading) return null;

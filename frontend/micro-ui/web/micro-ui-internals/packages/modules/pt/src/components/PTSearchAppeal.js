@@ -122,7 +122,7 @@ const PTSearchAppeal = ({tenantId, isLoading, t, onSubmit, data, count, setShowT
             return (
             <div>
                 <span className="link">
-                <Link to={`/digit-ui/employee/pt/appeal-details-workflow/` + row.original?.["appealId"]}>
+                <Link to={`/upyog-ui/employee/pt/appeal-details-workflow/` + row.original?.["appealId"]}>
                     {row.original?.["appealId"]}
                 </Link>
                 </span>
@@ -149,7 +149,7 @@ const PTSearchAppeal = ({tenantId, isLoading, t, onSubmit, data, count, setShowT
         //       return (
         //         <div>
         //           <span className="link">
-        //             <Link to={`/digit-ui/employee/pt/applicationsearch/application-details/${row.original["propertyId"]}`}>
+        //             <Link to={`/upyog-ui/employee/pt/applicationsearch/application-details/${row.original["propertyId"]}`}>
         //               {row.original["acknowldgementNumber"]}
         //             </Link>
         //           </span>

@@ -57,26 +57,26 @@ const PTCard = () => {
     // {
     //   count: isLoading ? "-" : total?.totalCount,
     //   label: t("ES_COMMON_INBOX"),
-    //   link: `/digit-ui/employee/pt/inbox`,
+    //   link: `/upyog-ui/employee/pt/inbox`,
     // },
     // {
     //   label: t("ES_TITLE_NEW_REGISTRATION"),
-    //   link: `/digit-ui/employee/pt/new-application`,
+    //   link: `/upyog-ui/employee/pt/new-application`,
     //   role: "PT_CEMP"
     // },
     {
       label: t("SEARCH_PROPERTY"),
-      link: `/digit-ui/employee/pt/search`,
+      link: `/upyog-ui/employee/pt/search`,
       image: "https://mnptapp-terraform.s3.ap-south-1.amazonaws.com/images/MyApplication.png",
     },
     {
       label: t("ES_COMMON_APPLICATION_SEARCH"),
-      link: `/digit-ui/employee/pt/application-search`,
+      link: `/upyog-ui/employee/pt/application-search`,
       image: "https://mnptapp-terraform.s3.ap-south-1.amazonaws.com/images/Property-Transfer.png",
     },
     {
       label: t("Search Appeal"),
-      link: `/digit-ui/employee/pt/appeal-search`,
+      link: `/upyog-ui/employee/pt/appeal-search`,
       image: "https://mnptapp-terraform.s3.ap-south-1.amazonaws.com/images/Property-Transfer.png",
     },
   ]
@@ -88,20 +88,20 @@ const PTCard = () => {
       {
         count: total?.totalCount,
         label: t("ES_TITLE_INBOX"),
-        link: `/digit-ui/employee/pt/inbox`,
+        link: `/upyog-ui/employee/pt/inbox`,
         image: "https://mnptapp-terraform.s3.ap-south-1.amazonaws.com/images/MyProperty.png",
       },
       // {
         
       //   count: total?.nearingSlaCount,
       //   label: t("TOTAL_NEARING_SLA"),
-      //   link: `/digit-ui/employee/pt/inbox`,
+      //   link: `/upyog-ui/employee/pt/inbox`,
       // },
       {
         
         count: 7,
         label: t("Notices"),
-        link: `/digit-ui/employee/pt/notices`,
+        link: `/upyog-ui/employee/pt/notices`,
         image: "https://mnptapp-terraform.s3.ap-south-1.amazonaws.com/images/My-Payments.png",
       }
     ],

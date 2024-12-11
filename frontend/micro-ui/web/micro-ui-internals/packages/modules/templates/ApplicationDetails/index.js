@@ -75,7 +75,7 @@ const ApplicationDetails = (props) => {
           history.push(`${action?.redirectionUrll?.pathname}`, { data: action?.redirectionUrll?.state });
         }
         else {
-          window.location.assign(`${window.location.origin}/digit-ui/employee/payment/collect/${action?.redirectionUrll?.pathname}`);
+          window.location.assign(`${window.location.origin}/upyog-ui/employee/payment/collect/${action?.redirectionUrll?.pathname}`);
         }
       } else if (!action?.redirectionUrl) {
         setShowModal(true);

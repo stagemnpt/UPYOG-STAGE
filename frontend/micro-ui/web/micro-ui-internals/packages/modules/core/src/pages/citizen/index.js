@@ -22,11 +22,11 @@ import './cityzenCustomStyle.css';
 import { useRef } from "react";
 import { useEffect } from "react";
 const sidebarHiddenFor = [
-  "digit-ui/citizen/register/name",
-  "/digit-ui/citizen/select-language",
-  "/digit-ui/citizen/select-location",
-  "/digit-ui/citizen/login",
-  "/digit-ui/citizen/register/otp",
+  "upyog-ui/citizen/register/name",
+  "/upyog-ui/citizen/select-language",
+  "/upyog-ui/citizen/select-location",
+  "/upyog-ui/citizen/login",
+  "/upyog-ui/citizen/register/otp",
 ];
 
 const getTenants = (codes, tenants) => {
@@ -67,6 +67,18 @@ const Home = ({
             a[b.parentModule] = a[b.parentModule]?.length > 0 && b.parentModule=='PT' ? [b, ...a[b.parentModule]] : [b];
             return a;
           }, {});
+          // console.log("formattedData111===",formattedData)
+          Object.keys(formattedData).forEach(key => {
+            const value = formattedData[key];
+            value.map((item) => {
+              if (!item["state"]) {
+                item["navigationURL"] = item["navigationURL"].replace("digit-ui", "upyog-ui");
+                item["url"] = item["url"].replace("digit-ui", "upyog-ui");
+                return item
+              }
+            });
+          });
+          // console.log("formattedData===",formattedData)
         return formattedData;
       },
     }
@@ -132,7 +144,7 @@ const Home = ({
                   isInfo={code === "OBPS" ? true : false}
                 />
               )}
-              {/* <Links key={index} matchPath={`/digit-ui/citizen/${code.toLowerCase()}`} userType={"citizen"} /> */}
+              {/* <Links key={index} matchPath={`/upyog-ui/citizen/${code.toLowerCase()}`} userType={"citizen"} /> */}
             </div>
             {/* <StaticDynamicCard moduleCode={code?.toUpperCase()}/> */}
           </div>
@@ -230,7 +242,7 @@ const Home = ({
             <ErrorComponent
               initData={initData}
               goToHome={() => {
-                history.push("/digit-ui/citizen");
+                history.push("/upyog-ui/citizen");
               }}
             />
           </Route>

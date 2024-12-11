@@ -137,7 +137,7 @@ const EmployeeSideBar = () => {
     setShowDialog(false);
   }
   const userProfile = () => {
-    history.push("/digit-ui/employee/user/profile");
+    history.push("/upyog-ui/employee/user/profile");
   };
   useEffect(() => {
     if (isLoading) {
@@ -221,7 +221,7 @@ const EmployeeSideBar = () => {
       result.push({label : key,children, icon:children?.[0]?.icon, to:""});
       }
       else{
-        result.push({label: key, value, icon:value?.leftIcon, to: key === "Home" ? "/digit-ui/employee" : value?.navigationURL});
+        result.push({label: key, value, icon:value?.leftIcon, to: key === "Home" ? "/upyog-ui/employee" : value?.navigationURL});
       }
     }
 
@@ -233,7 +233,7 @@ const EmployeeSideBar = () => {
     for (let i = 0; i < keys.length; i++) {
       if (configEmployeeSideBar[keys[i]][0].path.indexOf(".") === -1) {
         if (configEmployeeSideBar[keys[i]][0].displayName === "Home") {
-          const homeURL = "/digit-ui/employee";
+          const homeURL = "/upyog-ui/employee";
           res.unshift({
             moduleName: keys[i].toUpperCase(),
             icon: configEmployeeSideBar[keys[i]][0],
@@ -290,16 +290,16 @@ const EmployeeSideBar = () => {
   const redirectToLoginPage = () => {
     // localStorage.clear();
     // sessionStorage.clear();
-    history.push("/digit-ui/employee/login");
+    history.push("/upyog-ui/employee/login");
   };
   const showProfilePage = () => {
-    history.push("/digit-ui/employee/user/profile");
+    history.push("/upyog-ui/employee/user/profile");
   };
   let menuItems = [
     {
       element: "HOME",
       icon: "HomeIcon",
-      link: "/digit-ui/employee",
+      link: "/upyog-ui/employee",
       text: "Home",
       type: "link"
     },

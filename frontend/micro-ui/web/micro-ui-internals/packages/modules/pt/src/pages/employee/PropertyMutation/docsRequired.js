@@ -15,7 +15,7 @@ const RequiredDoc = () => {
   const [docs, setDocs] = useState([]);
   const { isLoading, data: Documentsob } = Digit.Hooks.pt.usePropertyMDMS(stateId, "PropertyTax", ["MutationDocuments"]);
   const OnSubmit = () => {
-    history.push(`/digit-ui/employee/pt/property-mutate/${id}`);
+    history.push(`/upyog-ui/employee/pt/property-mutate/${id}`);
   };
 
   useEffect(() => {

@@ -146,10 +146,10 @@ const StaticCitizenSideBar = ({ linkData, islinkDataLoading }) => {
   const redirectToLoginPage = () => {
     // localStorage.clear();
     // sessionStorage.clear();
-    history.push("/digit-ui/citizen/login");
+    history.push("/upyog-ui/citizen/login");
   };
   const showProfilePage = () => {
-    history.push("/digit-ui/citizen/user/profile");
+    history.push("/upyog-ui/citizen/user/profile");
   };
   const tenantId = Digit.ULBService.getCitizenCurrentTenant();
   const filteredTenantContact = storeData?.tenants.filter((e) => e.code === tenantId)[0]?.contactNumber || storeData?.tenants[0]?.contactNumber;

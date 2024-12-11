@@ -128,7 +128,7 @@ const AmalgamationCitizen = (props) => {
   
   const onAmalgamate = () =>{
     if(propertyDetails.length>=2) {
-      history.push({pathname: "/digit-ui/citizen/pt/property/new-application", state: {propertyDetails: propertyDetails, action: 'Amalgamation'}})
+      history.push({pathname: "/upyog-ui/citizen/pt/property/new-application", state: {propertyDetails: propertyDetails, action: 'Amalgamation'}})
     }else {
       setShowErrorToast(() => ({  error: true, label: `${t("Please select atleast two properties for amalgamation")}` }))
     }

@@ -144,7 +144,7 @@ const SelectPaymentType = (props) => {
   const onSubmit = () => {
     if(wrkflow === "WNS")
     {
-      history.push(`/digit-ui/citizen/payment/collect/${businessService}/${consumerCode}?workflow=WNS&consumerCode=${stringReplaceAll(consumerCode, "+", "/")}`, {
+      history.push(`/upyog-ui/citizen/payment/collect/${businessService}/${consumerCode}?workflow=WNS&consumerCode=${stringReplaceAll(consumerCode, "+", "/")}`, {
         paymentAmount: paymentAmt,
         tenantId: billDetails.tenantId,
         name: paymentType?.code !== optionSecound?.code && ConsumerName !== "undefined" ? ConsumerName : userInfo ? payersActiveName : payersName,
@@ -152,7 +152,7 @@ const SelectPaymentType = (props) => {
       });
     }
     else{
-    history.push(`/digit-ui/citizen/payment/collect/${businessService}/${consumerCode}`, {
+    history.push(`/upyog-ui/citizen/payment/collect/${businessService}/${consumerCode}`, {
       paymentAmount: paymentAmt,
       tenantId: billDetails.tenantId,
       name: paymentType?.code !== optionSecound?.code ? bill?.payerName : userInfo ? payersActiveName : payersName,

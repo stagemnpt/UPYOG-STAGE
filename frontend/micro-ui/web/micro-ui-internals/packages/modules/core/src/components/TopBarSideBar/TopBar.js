@@ -71,13 +71,13 @@ const TopBar = ({
   };
 
   function onNotificationIconClick() {
-    history.push("/digit-ui/citizen/engagement/notifications");
+    history.push("/upyog-ui/citizen/engagement/notifications");
   }
 
   const urlsToDisableNotificationIcon = (pathname) =>
     !!Digit.UserService?.getUser()?.access_token
       ? false
-      : ["/digit-ui/citizen/select-location"].includes(pathname);
+      : ["/upyog-ui/citizen/select-location"].includes(pathname);
 
   if (CITIZEN) {
     return (

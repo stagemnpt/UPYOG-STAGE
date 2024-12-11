@@ -173,7 +173,7 @@ const PropertyDetails = () => {
         asSectionHeader: true,
         belowComponent: () => (
           <LinkLabel
-            onClick={() => history.push({ pathname: `/digit-ui/employee/pt/payment-details/${applicationNumber}`})}
+            onClick={() => history.push({ pathname: `/upyog-ui/employee/pt/payment-details/${applicationNumber}`})}
             style={isMobile ? { marginTop: "15px", marginLeft: "0px" } : { marginTop: "15px" }}
           >
             {t("PT_VIEW_PAYMENT")}
@@ -214,7 +214,7 @@ const PropertyDetails = () => {
                 showFinancialYearsModal: true,
                 customFunctionToExecute: (data) => {
                   delete data.customFunctionToExecute;
-                  history.replace({ pathname: `/digit-ui/employee/pt/ptsearch/assessment-details/${applicationNumber}`, state: { ...data } });
+                  history.replace({ pathname: `/upyog-ui/employee/pt/ptsearch/assessment-details/${applicationNumber}`, state: { ...data } });
                 },
                 tenantId: Digit.ULBService.getStateId(),
               },
@@ -225,8 +225,8 @@ const PropertyDetails = () => {
                 isWarningPopUp: !fetchBillData?.Bill[0]?.totalAmount ? false : true,
                 redirectionUrl: {
                   pathname: !fetchBillData?.Bill[0]?.totalAmount
-                    ? `/digit-ui/employee/pt/property-mutate-docs-required/${applicationNumber}`
-                    : `/digit-ui/employee/payment/collect/PT/${applicationNumber}`,
+                    ? `/upyog-ui/employee/pt/property-mutate-docs-required/${applicationNumber}`
+                    : `/upyog-ui/employee/payment/collect/PT/${applicationNumber}`,
                   // state: { workflow: { action: "OPEN", moduleName: "PT", businessService } },
                   state: null,
                 },
@@ -245,7 +245,7 @@ const PropertyDetails = () => {
       workflowDetails?.data?.actionState?.nextActions?.push({
         action: "UPDATE",
         redirectionUrl: {
-          pathname: `/digit-ui/employee/pt/modify-application/${applicationNumber}`,
+          pathname: `/upyog-ui/employee/pt/modify-application/${applicationNumber}`,
           state: { workflow: { action: "OPEN", moduleName: "PT", businessService: "PT.UPDATE" } },
         },
         tenantId: Digit.ULBService.getStateId(),

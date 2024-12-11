@@ -56,7 +56,7 @@ const AssessmentDetails = () => {
       setShowToast({ key: "error", action: errorE?.response?.data?.Errors[0]?.message || errorE?.message, error : {  message:errorE?.response?.data?.Errors[0]?.message || errorE?.message } });
       setTimeout(() => {
         closeToast;
-        history.push('/digit-ui/citizen/pt/property/my-properties')
+        history.push('/upyog-ui/citizen/pt/property/my-properties')
       }, 5000);
     }
     
@@ -134,7 +134,7 @@ const AssessmentDetails = () => {
             {
               setShowToast({ key: "success", action: { action: "ASSESSMENT" } });
               setTimeout(closeToast, 5000);
-              history.push(`/digit-ui/citizen/pt-home`);
+              history.push(`/upyog-ui/citizen/pt-home`);
             }
             else{
               proceeedToPay()
@@ -146,7 +146,7 @@ const AssessmentDetails = () => {
   };
 
   const proceeedToPay = () => {
-    history.push(`/digit-ui/employee/payment/collect/PT/${propertyId}`);
+    history.push(`/upyog-ui/employee/payment/collect/PT/${propertyId}`);
   };
 
   if (ptCalculationEstimateLoading || assessmentLoading||!applicationDetails?.applicationDetails) {

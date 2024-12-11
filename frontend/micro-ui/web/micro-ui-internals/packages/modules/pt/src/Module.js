@@ -238,7 +238,7 @@ export const PTLinks = ({ matchPath, userType }) => {
       i18nKey: t("PT_SEARCH_AND_PAY"),
     },
     {
-      link: `/digit-ui/citizen/payment/my-bills/PT`,
+      link: `/upyog-ui/citizen/payment/my-bills/PT`,
       i18nKey: t("CS_TITLE_MY_BILLS"),
     },
     {

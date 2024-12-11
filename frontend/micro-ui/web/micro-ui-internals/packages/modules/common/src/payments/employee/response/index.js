@@ -53,9 +53,9 @@ export const SuccessfulPayment = (props) => {
   useEffect(() => {
     switch (selectedAction) {
       case "GO_TO_HOME":
-        return history.push("/digit-ui/employee");
+        return history.push("/upyog-ui/employee");
       case "ASSIGN_TO_DSO":
-        return history.push(`/digit-ui/employee/fsm/application-details/${consumerCode}`);
+        return history.push(`/upyog-ui/employee/fsm/application-details/${consumerCode}`);
       default:
         return null;
     }
@@ -257,7 +257,7 @@ export const SuccessfulPayment = (props) => {
         </ActionBar>
       ) : (
         <ActionBar style={{ display: "flex", justifyContent: "flex-end", alignItems: "baseline" }}>
-          <Link to="/digit-ui/employee">
+          <Link to="/upyog-ui/employee">
             <SubmitBar label={t("CORE_COMMON_GO_TO_HOME")} />
           </Link>
         </ActionBar>
@@ -280,7 +280,7 @@ export const FailedPayment = (props) => {
         <CardText>{t("ES_PAYMENT_FAILED_DETAILS")}</CardText>
       </Card>
       <ActionBar style={{ display: "flex", justifyContent: "flex-end", alignItems: "baseline" }}>
-        <Link to="/digit-ui/employee">
+        <Link to="/upyog-ui/employee">
           <SubmitBar label={t("CORE_COMMON_GO_TO_HOME")} />
         </Link>
       </ActionBar>

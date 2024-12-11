@@ -29,11 +29,11 @@ export const DigitApp = ({ stateCode, modules, appTenants, logoUrl, initData }) 
     if (!pathname?.includes("dss")) {
       Digit.SessionStorage.del("DSS_FILTERS");
     }
-    if (pathname?.toString() === "/digit-ui/employee") {
+    if (pathname?.toString() === "/upyog-ui/employee") {
       Digit.SessionStorage.del("SEARCH_APPLICATION_DETAIL");
       Digit.SessionStorage.del("WS_EDIT_APPLICATION_DETAILS");
     }
-    if (pathname?.toString() === "/digit-ui/citizen" || pathname?.toString() === "/digit-ui/employee") {
+    if (pathname?.toString() === "/upyog-ui/citizen" || pathname?.toString() === "/upyog-ui/employee") {
       Digit.SessionStorage.del("WS_DISCONNECTION");
     }
   }, [pathname]);
@@ -75,14 +75,14 @@ export const DigitApp = ({ stateCode, modules, appTenants, logoUrl, initData }) 
     <div className={scroll ? "main-header" : "main-header"}>
       {/* className={scroll ? "main-header scrolled" : "main-header"} */}
         <Switch>
-          <Route path="/digit-ui/employee">
+          <Route path="/upyog-ui/employee">
             <EmployeeApp {...commonProps} />
           </Route>
-          <Route path="/digit-ui/citizen">
+          <Route path="/upyog-ui/citizen">
             <CitizenApp {...commonProps} />
           </Route>
           <Route>
-            <Redirect to="/digit-ui/citizen" />
+            <Redirect to="/upyog-ui/citizen" />
           </Route>
         </Switch>
     </div>

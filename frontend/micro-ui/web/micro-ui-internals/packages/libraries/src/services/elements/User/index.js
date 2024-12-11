@@ -50,9 +50,9 @@ export const UserService = {
       window.localStorage.clear();
       window.sessionStorage.clear();
       if (userType === "citizen") {
-        window.location.replace("/digit-ui/citizen/login");
+        window.location.replace("/upyog-ui/citizen/login");
       } else {
-        window.location.replace("/digit-ui/employee/user/login");
+        window.location.replace("/upyog-ui/employee/user/login");
       }
     }
   },

@@ -141,7 +141,7 @@ if(appealId && billData?.canLoad) {
           history.push(`${action?.redirectionUrll?.pathname}`, { data: action?.redirectionUrll?.state });
         }
         else {
-          window.location.assign(`${window.location.origin}/digit-ui/employee/payment/collect/${action?.redirectionUrll?.pathname}`);
+          window.location.assign(`${window.location.origin}/upyog-ui/employee/payment/collect/${action?.redirectionUrll?.pathname}`);
         }
       } else if (!action?.redirectionUrl) {
         setShowModal(true);
@@ -205,13 +205,13 @@ if(appealId && billData?.canLoad) {
           sessionStorage.removeItem("WS_SESSION_APPLICATION_DETAILS");
           setIsEnableLoader(false);
           if(data?.Appeals[0]?.workflow?.action==="GENERATENOTICE") {
-            history.push({pathname:`/digit-ui/employee/pt/notices`,state: data?.Appeals[0]});
+            history.push({pathname:`/upyog-ui/employee/pt/notices`,state: data?.Appeals[0]});
           }
           
           if (data?.Amendments?.length > 0 ){
             //RAIN-6981 instead just show a toast here with appropriate message
           //show toast here and return 
-            //history.push("/digit-ui/employee/ws/response-bill-amend", { status: true, state: data?.Amendments?.[0] })
+            //history.push("/upyog-ui/employee/ws/response-bill-amend", { status: true, state: data?.Amendments?.[0] })
             
             if(variables?.AmendmentUpdate?.workflow?.action.includes("SEND_BACK")){
               setShowToast({ key: "success", label: t("ES_MODIFYSWCONNECTION_SEND_BACK_UPDATE_SUCCESS")})
@@ -239,7 +239,7 @@ if(appealId && billData?.canLoad) {
     closeModal();
   };
   const generateNotice = () => {
-    history.push({pathname:`/digit-ui/employee/pt/notices`,state: appDetailsToShow});
+    history.push({pathname:`/upyog-ui/employee/pt/notices`,state: appDetailsToShow});
   }
   return (
     <div>

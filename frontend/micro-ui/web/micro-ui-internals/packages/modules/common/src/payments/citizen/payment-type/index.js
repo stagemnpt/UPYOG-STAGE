@@ -78,9 +78,9 @@ export const SelectPaymentType = (props) => {
         },
         // success
         callbackUrl: window.location.href.includes("mcollect") || wrkflow === "WNS"
-          ? `${window.location.protocol}//${window.location.host}/digit-ui/citizen/payment/success/${businessService}/${wrkflow === "WNS"? encodeURIComponent(consumerCode):consumerCode}/${tenantId}?workflow=${wrkflow === "WNS"? wrkflow : "mcollect"}`
-          : `${window.location.protocol}//${window.location.host}/digit-ui/citizen/payment/success/${businessService}/${wrkflow === "WNS"? encodeURIComponent(consumerCode):consumerCode}/${tenantId}?propertyId=${consumerCode}`,
-          // `${window.location.protocol}//${window.location.host}/digit-ui/citizen/payment/success/${businessService}/${wrkflow === "WNS"? encodeURIComponent(consumerCode):consumerCode}/${tenantId}?propertyId=${propertyId}`,
+          ? `${window.location.protocol}//${window.location.host}/upyog-ui/citizen/payment/success/${businessService}/${wrkflow === "WNS"? encodeURIComponent(consumerCode):consumerCode}/${tenantId}?workflow=${wrkflow === "WNS"? wrkflow : "mcollect"}`
+          : `${window.location.protocol}//${window.location.host}/upyog-ui/citizen/payment/success/${businessService}/${wrkflow === "WNS"? encodeURIComponent(consumerCode):consumerCode}/${tenantId}?propertyId=${consumerCode}`,
+          // `${window.location.protocol}//${window.location.host}/upyog-ui/citizen/payment/success/${businessService}/${wrkflow === "WNS"? encodeURIComponent(consumerCode):consumerCode}/${tenantId}?propertyId=${propertyId}`,
         additionalDetails: {
           isWhatsapp: false,
         },
@@ -180,7 +180,7 @@ export const SelectPaymentType = (props) => {
   if (authorization === "true" && !userInfo.access_token) {
     localStorage.clear();
     sessionStorage.clear();
-    window.location.href = `/digit-ui/citizen/login?from=${encodeURIComponent(pathname + search)}`;
+    window.location.href = `/upyog-ui/citizen/login?from=${encodeURIComponent(pathname + search)}`;
   }
 
   if (isLoading || paymentLoading) {

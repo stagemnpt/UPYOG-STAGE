@@ -82,7 +82,7 @@ const PTAcknowledgement = ({ data, onSuccess }) => {
     Digit.Utils.pdf.generate(data);
   };
   const addMoreProperty = ()=> {
-    history.push({pathname: "/digit-ui/citizen/pt/property/new-application", state: bifurcationDetails})
+    history.push({pathname: "/upyog-ui/citizen/pt/property/new-application", state: bifurcationDetails})
 
   }
 
@@ -119,7 +119,7 @@ const PTAcknowledgement = ({ data, onSuccess }) => {
           />
         )}
       </StatusTable>
-      {/* {mutation.isSuccess && <Link to={`/digit-ui/citizen/feedback?redirectedFrom=${match.path}&propertyId=${mutation.isSuccess ? mutation?.data?.Properties[0]?.propertyId : ""}&acknowldgementNumber=${mutation.isSuccess ? mutation?.data?.Properties[0]?.acknowldgementNumber : ""}&creationReason=${mutation.isSuccess ? mutation?.data?.Properties[0]?.creationReason : ""}&tenantId=${mutation.isSuccess ? mutation?.data?.Properties[0]?.tenantId : ""}&locality=${mutation.isSuccess ? mutation?.data?.Properties[0]?.address?.locality?.code : ""}`}>
+      {/* {mutation.isSuccess && <Link to={`/upyog-ui/citizen/feedback?redirectedFrom=${match.path}&propertyId=${mutation.isSuccess ? mutation?.data?.Properties[0]?.propertyId : ""}&acknowldgementNumber=${mutation.isSuccess ? mutation?.data?.Properties[0]?.acknowldgementNumber : ""}&creationReason=${mutation.isSuccess ? mutation?.data?.Properties[0]?.creationReason : ""}&tenantId=${mutation.isSuccess ? mutation?.data?.Properties[0]?.tenantId : ""}&locality=${mutation.isSuccess ? mutation?.data?.Properties[0]?.address?.locality?.code : ""}`}>
           <SubmitBar label={t("CS_REVIEW_AND_FEEDBACK")}/>
       </Link>} */}
       {mutation.isSuccess && <SubmitBar label={t("PT_DOWNLOAD_ACK_FORM")} onSubmit={handleDownloadPdf} />}
@@ -129,7 +129,7 @@ const PTAcknowledgement = ({ data, onSuccess }) => {
         </a>
       }
       {
-        (!isBifurcation || mutation?.data?.Properties[0]?.bifurcationCount>1) && <Link to={`/digit-ui/citizen`}>
+        (!isBifurcation || mutation?.data?.Properties[0]?.bifurcationCount>1) && <Link to={`/upyog-ui/citizen`}>
           <LinkButton label={t("CORE_COMMON_GO_TO_HOME")} />
         </Link>
       }

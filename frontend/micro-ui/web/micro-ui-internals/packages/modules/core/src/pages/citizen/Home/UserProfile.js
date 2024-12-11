@@ -312,12 +312,12 @@ const UserProfile = ({ stateCode, userType, cityDetails }) => {
           <BreadCrumb
             crumbs={[
               {
-                path: "/digit-ui/employee",
+                path: "/upyog-ui/employee",
                 content: t("ES_COMMON_HOME"),
                 show: true,
               },
               {
-                path: "/digit-ui/employee/user/profile",
+                path: "/upyog-ui/employee/user/profile",
                 content: t("ES_COMMON_PAGE_1"),
                 show: url.includes("/user/profile"),
               },

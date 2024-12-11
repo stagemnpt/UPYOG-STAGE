@@ -426,7 +426,7 @@ const SearchProperty = ({ config: propsConfig, onSelect }) => {
       });
     } else {
       history.push(
-        `/digit-ui/citizen/pt/property/search-results?${Object.keys(qs)
+        `/upyog-ui/citizen/pt/property/search-results?${Object.keys(qs)
           .map((key) => `${key}=${qs[key]}`)
           .join("&")}`
       );
@@ -455,7 +455,7 @@ const SearchProperty = ({ config: propsConfig, onSelect }) => {
         cardStyle={{marginBottom:"0"}}
       ></FormComposer>
       <span className="link" style={{display:"flex", justifyContent: isMobile ? "center" : "left", marginLeft: "14px", color: "#b77212", marginTop: "-23px"}}>
-        <Link to={"/digit-ui/citizen/pt/property/new-application"}>{t("CPT_REG_NEW_PROPERTY")}</Link>
+        <Link to={"/upyog-ui/citizen/pt/property/new-application"}>{t("CPT_REG_NEW_PROPERTY")}</Link>
       </span>
       {showToast && (
         <Toast

@@ -76,7 +76,7 @@ const EditForm = ({ applicationData }) => {
     if (state?.workflow?.action === "OPEN") {
       formData.units = formData.units.filter((unit) => unit.active);
     }
-    history.push("/digit-ui/employee/pt/response", { Property: formData, key: "UPDATE", action: "SUBMIT" });
+    history.push("/upyog-ui/employee/pt/response", { Property: formData, key: "UPDATE", action: "SUBMIT" });
   };
 
   if (isLoading) {

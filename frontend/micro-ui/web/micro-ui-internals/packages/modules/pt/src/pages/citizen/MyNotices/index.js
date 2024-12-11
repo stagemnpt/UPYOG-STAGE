@@ -60,7 +60,7 @@ const MyNotices = (props) => {
   }
 
   const gotoNotice = (el)=> {
-    history.push({pathname: "/digit-ui/citizen/pt/property/notice/"+el?.noticeNumber, state: el})
+    history.push({pathname: "/upyog-ui/citizen/pt/property/notice/"+el?.noticeNumber, state: el})
   }
   
   return (

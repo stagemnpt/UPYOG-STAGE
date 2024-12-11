@@ -122,7 +122,7 @@ const MutationForm = ({ applicationData, tenantId }) => {
       };
     }
 
-    history.replace("/digit-ui/employee/pt/response", { Property: submitData.Property, key: "UPDATE", action: "SUBMIT" });
+    history.replace("/upyog-ui/employee/pt/response", { Property: submitData.Property, key: "UPDATE", action: "SUBMIT" });
   };
 
   const configs = newConfigMutate;
