@@ -21,6 +21,7 @@ RUN cd web/ \
     && node envs.js \
     && node -e 'console.log(v8.getHeapStatistics().heap_size_limit/(1024*1024))' \
     && cd micro-ui-internals \
+    && node -e "const fs=require('fs');const p=JSON.parse(fs.readFileSync('package.json'));p.resolutions=p.resolutions||{};p.resolutions['node-sass']='8.0.0';fs.writeFileSync('package.json',JSON.stringify(p,null,2));" \
     && yarn install \
     && yarn build \
     && find . -name "node_modules" -type d -prune -exec rm -rf '{}' \; \
