@@ -3,7 +3,9 @@ FROM node:18.20.4-alpine AS build
 #FROM upyogio/alpine-node-builder-14:yarn AS build
 #FROM ghcr.io/egovernments/alpine-node-builder-14:yarn AS build
 RUN apk update && apk upgrade
-RUN apk add --no-cache git>2.30.0
+#RUN apk add --no-cache git>2.30.0
+RUN apk add --no-cache git>2.30.0 python3 make g++
+RUN ln -sf python3 /usr/bin/python
 ARG WORK_DIR
 WORKDIR /app
 ENV NODE_OPTIONS "--max-old-space-size=4096"
