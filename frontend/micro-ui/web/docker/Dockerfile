@@ -20,11 +20,13 @@ RUN ls -lah
 RUN cd web/ \
     && node envs.js \
     && node -e 'console.log(v8.getHeapStatistics().heap_size_limit/(1024*1024))' \
-    && chmod +x install-deps.sh \
-    && ./install-deps.sh \
-    && yarn cache clean --force \
-    && rm -rf node_modules \
+    && cd micro-ui-internals \
     && yarn install \
+    && yarn build \
+    && find . -name "node_modules" -type d -prune -exec rm -rf '{}' \; \
+    && cd .. \
+    && rm -rf node_modules \
+    && yarn install --force \
     && yarn build
 
 FROM nginx:mainline-alpine
