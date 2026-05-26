@@ -1,4 +1,5 @@
-FROM node:14.21.3-alpine AS build
+FROM node:18.20.4-alpine AS build
+#FROM node:14.21.3-alpine AS build
 #FROM upyogio/alpine-node-builder-14:yarn AS build
 #FROM ghcr.io/egovernments/alpine-node-builder-14:yarn AS build
 RUN apk update && apk upgrade
