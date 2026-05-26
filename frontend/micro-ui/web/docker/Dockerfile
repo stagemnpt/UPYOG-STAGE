@@ -20,13 +20,12 @@ RUN ls -lah
 RUN cd web/ \
     && node envs.js \
     && node -e 'console.log(v8.getHeapStatistics().heap_size_limit/(1024*1024))' \
-    && chmod +x install-deps.sh \
-    && yarn install \
-    && cp yarn.lock yarn.lock.bak \
-    && ./install-deps.sh \
-    && cp yarn.lock.bak yarn.lock \
-    && yarn install \
-    && yarn build 
+    && yarn cache clean --force \
+    && yarn install --check-files --force \
+    && yarn workspace @upyog/digit-ui-libraries build \
+    && ls -la node_modules/@upyog \
+    && node -e "require.resolve('@upyog/digit-ui-libraries'); console.log('digit-ui-libraries resolved OK')" \
+    && yarn build
 
 FROM nginx:mainline-alpine
 #FROM ghcr.io/egovernments/nginx:mainline-alpine
