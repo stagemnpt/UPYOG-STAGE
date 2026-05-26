@@ -20,11 +20,9 @@ RUN ls -lah
 RUN cd web/ \
     && node envs.js \
     && node -e 'console.log(v8.getHeapStatistics().heap_size_limit/(1024*1024))' \
-    && yarn cache clean --force \
-    && yarn install --check-files --force \
-    && yarn workspace @upyog/digit-ui-libraries build \
-    && ls -la node_modules/@upyog \
-    && node -e "require.resolve('@upyog/digit-ui-libraries'); console.log('digit-ui-libraries resolved OK')" \
+    && chmod +x install-deps.sh \
+    && ./install-deps.sh \
+    && yarn install --force \
     && yarn build
 
 FROM nginx:mainline-alpine
