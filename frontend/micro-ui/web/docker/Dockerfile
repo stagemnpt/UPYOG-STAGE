@@ -8,7 +8,8 @@ RUN apk add --no-cache git>2.30.0 python3 make g++
 RUN ln -sf python3 /usr/bin/python
 ARG WORK_DIR
 WORKDIR /app
-ENV NODE_OPTIONS "--max-old-space-size=4096"
+#ENV NODE_OPTIONS "--max-old-space-size=4096"
+ENV NODE_OPTIONS "--max-old-space-size=4096 --openssl-legacy-provider"
 ENV GENERATE_SOURCEMAP "false"
 ENV REACT_APP_SECRET_KEY "PaXJBEnwt4tGSo/8"
 
