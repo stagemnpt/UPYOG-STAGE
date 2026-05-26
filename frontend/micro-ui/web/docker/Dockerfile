@@ -23,7 +23,6 @@ RUN cd web/ \
     && chmod +x install-deps.sh \
     && ./install-deps.sh \
     && yarn cache clean --force \
-    && rm -rf node_modules \
     && yarn install \
     && yarn build 
 
