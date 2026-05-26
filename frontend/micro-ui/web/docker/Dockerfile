@@ -21,9 +21,9 @@ RUN cd web/ \
     && node envs.js \
     && node -e 'console.log(v8.getHeapStatistics().heap_size_limit/(1024*1024))' \
     && chmod +x install-deps.sh \
-    && cp yarn.lock yarn.lock.bak \
+    && cp ../yarn.lock ../yarn.lock.bak \
     && ./install-deps.sh \
-    && cp yarn.lock.bak yarn.lock \
+    && cp ../yarn.lock.bak ../yarn.lock \
     && yarn cache clean --force \
     && yarn install \
     && yarn build 
